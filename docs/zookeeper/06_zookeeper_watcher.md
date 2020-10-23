@@ -1,4 +1,4 @@
-# ZooKeeper 之 Curator
+# ZooKeeper 之 Watcher
 
 精彩内容敬请期待~
 
