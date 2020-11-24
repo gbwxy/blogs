@@ -3,3 +3,4 @@
 
 * [Zookeeper](./docs/zookeeper/)
 
+* [Redis](./docs/redis/)
