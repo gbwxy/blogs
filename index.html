@@ -18,7 +18,7 @@
   <script>
     window.$docsify = {
       name: '隔壁王小猿的博客',
-      repo: 'https://github.com/gbwxy/programmer_gbwxy',
+      repo: 'https://github.com/gbwxy/blogs',
       maxLevel: 11,//最大支持渲染的标题层级
       subMaxLevel: 10,
       homepage: 'README.md',
@@ -30,12 +30,14 @@
         //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
         paths: 'auto',
         placeholder: '搜索',
+		
         noData: '找不到结果',
         // 搜索标题的最大程级, 1 - 6
         depth: 3,
       },
+      ga: 'G-6YMLPQL2YX'
       plugins: [
-        EditOnGithubPlugin.create('https://github.com/gbwxy/blogs')
+        
       ],
     }
   </script>
@@ -50,7 +52,8 @@
   <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
   <!-- 字数统计 -->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-  <script src="https://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-0.1.1.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
 </body>
 
 </html>
