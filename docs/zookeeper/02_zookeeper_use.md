@@ -2,7 +2,7 @@
 
 小猿接下来就要介绍 Zookeeper 的使用，各位童鞋要仔细阅读哦，小猿接下来的文章中的例子都是以 r3.5.8 这个版本的 Zookeeper 来的，各位童鞋可以在自己的项目中添加依赖，小猿以 gradle 作为列子，需要添加如下依赖
 
-```
+```java
 compile group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.5.8'
 compile group: 'org.apache.curator', name: 'curator-framework', version: '2.12.0'
 compile group: 'org.apache.curator', name: 'curator-recipes', version: '2.12.0'

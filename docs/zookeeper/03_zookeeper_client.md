@@ -3,14 +3,14 @@
 Zookeeper 作为一个分布式服务框架，主要用来解决分布式数据一致性问题，它提供了简单的分布式原语，并且对多种编程语言提供了 API。下面我们来看一下 Zookeeper 的 Java 客户端 API 使用方式。
 
 在我们项目里要用到 Zookeeper 的 API 的时候，我们项目中需要添加依赖，以 gradle 方式为例
-```
+``` java
  compile('org.apache.zookeeper:zookeeper:3.4.10')
 ```
 
 ##  创建会话
 ----
 ### 构造函数
-```
+``` java
 	ZooKeeper(String connectString, int sessionTimeout, Watcher watcher) 
 	ZooKeeper(String connectString, int sessionTimeout, Watcher watcher,boolean canBeReadOnly) 
 	ZooKeeper(String connectString, int sessionTimeout, Watcher watcher, long sessionId, byte[] sessionPasswd) 
@@ -37,7 +37,7 @@ Zookeeper 作为一个分布式服务框架，主要用来解决分布式数据�
 
 其中 Zookeeper_Constructor_Usage_Simple 类实现了 Watcher 接口，重写了 process 方法，该方法负责处理来自 Zookeeper 服务端的 Watcher 通知，在收到服务端发来的 SynConnected 事件之后，解除主程序在 CountDownLatch 上的等待阻塞。关于 Watcher 相关的介绍，后续会介绍。
 
-```
+``` java
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -79,7 +79,7 @@ public class Zookeeper_Constructor_Usage_Simple implements Watcher {
 
 Zookeeper 构造方法允许传入 SessionId 和 SessionPasswd 的目的是为了复用会话，以维持之前会话的有效性。**客户端传入  SessionId 和 SessionPasswd 的目的是为了复用会话，以维持之前会话的有效性。**
 
-```
+``` java
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -149,13 +149,13 @@ public class Zookeeper_Constructor_Usage_SID_PW {
 ----
 ### Create
 同步创建：
-```
+``` java
 	String create(String path,byte[] data,List<ACL> acl,CreateMode createMode)throws KeeperException,InterruptedException
 	String create(String path,byte[] data,List<ACL> acl,CreateMode createMode,Stat stat)throws KeeperException,InterruptedException
 	String create(String path,byte[] data,List<ACL> acl,CreateMode createMode,Stat stat,long ttl)throws KeeperException, InterruptedException
 ```
 异步创建：
-```
+``` java
 	void create(String path,byte[] data,List<ACL> acl,CreateMode createMode,AsyncCallback.StringCallback cb,Object ctx)
 	void create(String path,byte[] data,List<ACL> acl,CreateMode createMode,AsyncCallback.Create2Callback cb,Object ctx)
 	void create(String path,byte[] data,List<ACL> acl,CreateMode createMode,AsyncCallback.Create2Callback cb,Object ctx,long ttl)
@@ -182,7 +182,7 @@ public class Zookeeper_Constructor_Usage_SID_PW {
 - acl 咱们例子这里先传入 Ids.OPEN_ACL_UNSAFE，这就表明之后对这个节点的任何书籍都不受权限限制。关于 ACL 请参考 [ZooKeeper 之 ACL](./docs/zookeeper/06_zookeeper_acl.md) 
 
 ### Create 示例
-```
+``` java
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
 import java.util.concurrent.CountDownLatch;
@@ -288,7 +288,7 @@ public class Zookeeper_Create_API_Sync_Usage implements Watcher {
 ##  删除节点
 ### Delete
 ----
-```
+``` java
 	void delete(String path, int version)
 	void delete(String path, int version, AsyncCallback.VoidCallback cb, Object ctx)
 ```
@@ -304,7 +304,7 @@ public class Zookeeper_Create_API_Sync_Usage implements Watcher {
 
 ### Delete 示例
 
-```
+``` java
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
@@ -347,20 +347,21 @@ public class Delete_API_Sync_Usage implements Watcher {
 ### GetChildren
 Zookeeper 客户端可以通过 API 来获取一个节点的所有的子节点，有如下接口：
 同步调用
-```
+``` java
 	List<String> getChildren(String path, boolean watch)
 	List<String> getChildren(String path, boolean watch, Stat stat)
 	List<String> getChildren(String path, Watcher watcher)
 	List<String> getChildren(String path, Watcher watcher, Stat stat)
 ```
 异步调用
-```
+``` java
 	void getChildren(String path, boolean watch, AsyncCallback.Children2Callback cb, Object ctx)
 	void getChildren(String path, boolean watch, AsyncCallback.ChildrenCallback cb, Object ctx)
 	void getChildren(String path, Watcher watcher, AsyncCallback.Children2Callback cb, Object ctx)
 	void getChildren(String path, Watcher watcher, AsyncCallback.ChildrenCallback cb, Object ctx)
-
+	
 ```
+
 接口参数说明
 
 | 参数名        | 说明                                                         |
@@ -378,7 +379,8 @@ Zookeeper 客户端可以通过 API 来获取一个节点的所有的子节点�
 
 ### GetChildren 示例
 #### 同步获取子节点列表
-```
+
+``` java
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
 import java.util.List;
@@ -454,7 +456,8 @@ public class Zookeeper_GetChildren_API_Sync_Usage implements Watcher {
 ```
 
 #### 异步获取子节点列表
-```
+
+```  java
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
@@ -535,7 +538,7 @@ public class Zookeeper_GetChildren_API_ASync_Usage implements Watcher {
 ```
 ### GetData
 客户端可以通过 API 获取节点的数据内容，有如下接口：
-```
+``` java
 	byte[] getData(String path, boolean watch, Stat stat)
 	byte[] getData(String path, Watcher watcher, Stat stat)
 	void  getData(String path, boolean watch, AsyncCallback.DataCallback cb, Object ctx)
@@ -556,7 +559,7 @@ public class Zookeeper_GetChildren_API_ASync_Usage implements Watcher {
 
 ### GetData 示例
 #### 同步获取数据示例
-```
+```  java
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
@@ -622,7 +625,7 @@ public class Zookeeper_GetData_API_Sync_Usage implements Watcher {
 =============  Receive watched event. event  :WatchedEvent state:SyncConnected type:NodeDeleted path:/zk_test
 ```
 #### 异步获取数据示例
-```
+``` java
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
@@ -694,7 +697,7 @@ public class Zookeeper_GetData_API_ASync_Usage implements Watcher {
 ##  更新数据
 ----
 ### SetData
-```
+``` java
 	Stat setData(String path, byte[] data, int version)
 	void setData(String path, byte[] data, int version, AsyncCallback.StatCallback cb, Object ctx)
 ```
@@ -718,7 +721,7 @@ public class Zookeeper_GetData_API_ASync_Usage implements Watcher {
 
 ### SetData示例
 #### 异步更新数据示例
-```
+``` java
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
@@ -789,7 +792,7 @@ public class Zookeeper_SetData_API_ASync_Usage implements Watcher {
 ```
 
 #### 同步更新数据示例
-```
+``` java
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
@@ -850,7 +853,7 @@ public class Zookeeper_SetData_API_Sync_Usage implements Watcher {
 ##  检测节点是否存在
 ----
 ### Exists
-```
+``` java
 	Stat exists(String path, boolean watch)
 	Stat exists(String path, Watcher watcher)
 	void exists(String path, boolean watch, AsyncCallback.StatCallback cb, Object ctx)

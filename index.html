@@ -9,7 +9,6 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-  
 </head>
 
 <body>
@@ -20,8 +19,8 @@
     window.$docsify = {
       name: '隔壁王小猿的博客',
       repo: 'https://github.com/gbwxy/blogs',
-      maxLevel: 11,//最大支持渲染的标题层级
-      subMaxLevel: 10,
+      maxLevel: 8,//最大支持渲染的标题层级
+      subMaxLevel: 3,
       homepage: 'README.md',
       coverpage: false,
       loadSidebar: true,
@@ -31,15 +30,12 @@
         //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
         paths: 'auto',
         placeholder: '搜索',
-		
         noData: '找不到结果',
         // 搜索标题的最大程级, 1 - 6
         depth: 3,
       },
-      ga: 'G-6YMLPQL2YX'
       plugins: [
-        
-      ],
+             ],
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
@@ -53,10 +49,11 @@
   <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
   <!-- 字数统计 -->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-  <!-- 谷歌统计 - Google Analytics -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js" data-ga="G-NMEK537M5R"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js" data-ga="G-6YMLPQL2YX"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
-  <script src="https://unpkg.com/docsify-copy-code@2"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
 </body>
 
 </html>
