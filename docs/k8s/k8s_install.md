@@ -1,3 +1,5 @@
+# kubernetes 安装部署
+
 ### 环境ip和密码
 
 vi /etc/sysconfig/network-scripts/ifcfg-ens33
@@ -414,8 +416,8 @@ chmod -R 777 /data/cert
 
 cd /usr/local/harbor/
 ./install.sh 
- 
- 
+
+
 访问测试：https://hub.atguigu.com
 用户名/密码为admin /Harbor12345
 
@@ -449,7 +451,7 @@ kubectl run nginx-deployment --image=hub.atguigu.com/library/nginx:1.17.1 --port
 #master节点查看
 kubectl get deployment --all-namespaces -o wide | grep nginx
 kubectl get pod --all-namespaces -o wide | grep nginx
- 
+
 #查看是否执行 --node节点
 docker ps -a | grep nginx
 

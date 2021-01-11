@@ -1,0 +1,7 @@
+* [返回](./)
+* [kubernetes](./docs/k8s/)
+* [kubernetes-安装部署](./docs/k8s/k8s_install.md)
+* [kubernetes-资源清单](./docs/k8s/k8s_resource.md)
+* [kubernetes-控制器](./docs/k8s/k8s_controller.md)
+* [kubernetes-服务](./docs/k8s/k8s_svc.md)
+* [kubernetes-ConfigMap](./docs/k8s/k8s_configMap.md)
