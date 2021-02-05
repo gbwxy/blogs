@@ -47,7 +47,7 @@ vi /etc/hosts
 
 ### 修改 yum 源
 
-cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak.20201215
+cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak.20210203
 
 curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
 
@@ -65,7 +65,6 @@ yum install -y conntrack ntpdate ntp ipvsadm ipset jq iptables curl sysstat libs
 ### 设置防火墙为iptables，并且设置规则为空
 
 systemctl stop firewalld && systemctl disable firewalld
-
 yum -y install iptables-services && systemctl start iptables && systemctl enable iptables && iptables -F && service iptables save
 
 
