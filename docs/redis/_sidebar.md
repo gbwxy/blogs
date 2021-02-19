@@ -1,5 +1,5 @@
 * [返回](./)
-* [Redis](./docs/redis/)
+* [Redis 实战](./docs/redis/)
 * [Redis - 数据结构](./docs/redis/01_datastruct.md)
 * [Redis - 高级数据结构](./docs/redis/01_datastruct_s.md)
 * [Redis - 跳跃列表](./docs/redis/02_skiplist.md)

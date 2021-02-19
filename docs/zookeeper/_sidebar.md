@@ -1,5 +1,5 @@
 * [返回](./)
-* [Zookeeper](./docs/zookeeper/)
+* [Zookeeper 原理与实战](./docs/zookeeper/)
 * [ZooKeeper-是什么](./docs/zookeeper/01_zookeeper_what.md)
 * [ZooKeeper 之 Paxos 和 ZAB](./docs/zookeeper/01_zookeeper_zab.md)
 * [ZooKeeper 之基本概念与使用](./docs/zookeeper/02_zookeeper_use.md)

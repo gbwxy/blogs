@@ -1,4 +1,4 @@
-# Spring - Bean的加载
+# Bean的加载
 ----
 一张表格读懂 Bean 的加载过程
 
