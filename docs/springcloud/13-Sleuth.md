@@ -4,7 +4,7 @@ https://spring.io/projects/spring-cloud-sleuth
 ### 监控链路调用
 这包括将跟踪数据（跨度）报告到的位置，要保留（跟踪）多少个跟踪，是否发送了远程字段（行李）以及要跟踪哪些库。微服务中节点过多，使用它能更好的做监控。
 ### 安装Zipkin
-1. Sleuth 负责链路监控，Zipkin负责展现
+1. Sleuth 负责链路监控，ZipKin负责展现
 
 2. https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server/
 

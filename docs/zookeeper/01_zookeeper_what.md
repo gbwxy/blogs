@@ -68,7 +68,7 @@
 **事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。**换句话说，一旦某个事务成功结束，那么它对数据库所做的更新就必须被永久的保存下来，即使发生系统崩溃或机器宕机等故障，只要数据库能够重新启动，那么一定能够将其恢复到事务成功结束时的状态。
 
 ### <span id="cap">CAP </span>
-CAP原则又称CAP定理，** Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者的缩写。一个分布式系统中三者不能共存，最多只能满足三项中的两项。**
+CAP原则又称CAP定理，**Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者的缩写。一个分布式系统中三者不能共存，最多只能满足三项中的两项。**
 
 ![CAP理论](https://note.youdao.com/yws/api/personal/file/B005EF51BC8A46178AA2497FB50DE8BD?method=download&shareKey=7477d44359aba6e111f900f16e4e845f)
 

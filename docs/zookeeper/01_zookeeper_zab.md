@@ -134,6 +134,7 @@
 
 ## Paxos 算法
 ------
+https://www.cnblogs.com/zhang-qc/p/8688258.html
 
 
 ##  ZAB 协议
