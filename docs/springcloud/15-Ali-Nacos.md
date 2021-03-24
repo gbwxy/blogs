@@ -1,4 +1,5 @@
-# 简介
+# Spring Cloud Alibaba Nacos
+## Nacos 简介
 ### 什么是 Nacos
 Dynamic Naming and Configuration Service 动态命名和配置服务
 Nacos = Eureka+Config+Bus 注册中心与配置中心的组合
@@ -9,6 +10,7 @@ Nacos = Eureka+Config+Bus 注册中心与配置中心的组合
 https://github.com/alibaba/nacos
 ### 官网
 https://nacos.io/en-us/
+https://nacos.io/zh-cn/
 ### 安装
 1. 本案例采用 1.1.4
 2. https://github.com/alibaba/nacos/releases/tag/1.1.4          tar.gz是linux，zip是windows
@@ -16,7 +18,7 @@ https://nacos.io/en-us/
 4. startup.cmd 启动程序
 5. 进入 http://localhost:8848/nacos
 6. 默认账号密码都是 nacos
-# 作为服务注册中心
+## 作为服务注册中心
 ### 服务提供者模块
 1. cloud-ali-provider-payment9001
 2. 父 pom
@@ -115,7 +117,16 @@ public class OrderNacosController {
 ```
 7. 测试
 http://localhost:83/consumer/payment/nacos/1
-# 作为配置中心
+
+### 注册中心对比
+![](https://note.youdao.com/yws/api/personal/file/02AA1B4E368E47E8BDC8C4EF55A42D7B?method=download&shareKey=2c2860909ca7f143cde46bb82e2576e9)
+![](https://note.youdao.com/yws/api/personal/file/12EDBEDE90F24E92B8EB978398816324?method=download&shareKey=446c68cadaa231e8b53bd08ae59bed39)
+![](https://note.youdao.com/yws/api/personal/file/71A5CC7E00F4404B94B004802C34FE04?method=download&shareKey=b9902574b6ed04561008f930ac96ac59)
+
+### Nacos CP AP 切换
+curl -X PUT '$NACOS_SERVER:8848/nacos/v1/ns/operator/switches?entry=serverMode&value=CP'
+
+## 作为配置中心
 ### 配置
 1. 建模块cloud-ali-config-nacos-client3377
 2. pom
@@ -177,23 +188,18 @@ public class ConfigClientController {
     * spring.profile.active 即为当前环境对应的 profile，详情可以参考 Spring Boot文档。 注意：当 spring.profile.active 为空时，对应的连接符 - 也将不存在，dataId 的拼接格式变成 ${prefix}.${file-extension}
     * file-exetension 为配置内容的数据格式，可以通过配置项 spring.cloud.nacos.config.file-extension 来配置。目前只支持 properties 和 yaml 类型。
     * 得到 data id为
-        ```
-            ${prefix}-${spring.profile.active}.${file-extension}
-            ${spring-application-name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-        ```
+```
+${prefix}-${spring.profile.active}.${file-extension}
+${spring-application-name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+```
+![](https://note.youdao.com/yws/api/personal/file/CDB3AA5FCD9B49B49DB64A75A3315E3D?method=download&shareKey=029e5bac029ef5ff2e68dc745b5dddf9)
     * 配置 yaml 文件
-     <img src="imgs/nacos-config1.png">
-     <img src="imgs/nacos-config1.png">
     * 测试访问http://localhost:3377/config/info看是否得到配置信息
     * 更改nacos中内容查看3377中是否变化
 
-
-
-
-
 ### 分组
-<img src="imgs/nacos命名空间.png">
-<img src="imgs/nacos分组.png">
+![](https://note.youdao.com/yws/api/personal/file/459BE685A0534982B919C4C37149748C?method=download&shareKey=0900afc9e252802eb689657cab008bdf)
+![](https://note.youdao.com/yws/api/personal/file/9EE042D874EB48F1A6C0949C1FA9508C?method=download&shareKey=128f5b5c606f07d6faa2d1228e4ef1fd)
 
 1. Nacos默认的命名空间是 public ，Namespace主要实现隔离。
 比如说现在有三个环境：开发，测试，生产环境，就可以创建三个Namespace，不同的Namespace之间是隔离的。
@@ -204,7 +210,8 @@ public class ConfigClientController {
 ### 三种方案加载配置
 ###### DataID
 指定 spring.profile.active 与配置文件的DataID来使不同环境下读取不同的配置
-默认空难攻坚+默认分组+新建dev和test两个DataID
+默认namespace+默认分组+新建dev和test两个DataID
+
 1. Nacos配置中心新建nacos-config-client-test.yaml
 2. 将spring中的配置spring.profile.active改成test，就会加载Nacos中新建的yaml
 ###### Group
@@ -263,7 +270,7 @@ spring:
 4. 重启Nacos
 5. 观察到之前写过的配置全部消失，因为切换了数据库
 ### 集群
-<img src="imgs/nacos集群.jpeg"> 
+![](https://note.youdao.com/yws/api/personal/file/E7E7A6A33C8E4DBA994866471831AF14?method=download&shareKey=98ac0422b5f565ae1b455da8da67ac84)
 
 ###### 前提配置
 1个Nginx+3个nacos注册中心+1个mysql
