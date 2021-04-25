@@ -6,7 +6,7 @@
 4. 其他算法
 
 
-## 个数
+## 长度函数
 ```java
 String str = "";
 int len = str.length();
