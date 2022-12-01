@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-12-01T01:59:54.789Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="Dseh5sr2RyxUampFFLr1" version="20.6.0" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-12-01T02:04:17.357Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="bFT3EZ_InBjpTo7tN1HG" version="20.6.0" type="github" pages="2">
   <diagram id="CsKwpSQwrKAqk3lHsoDC" name="滑动窗口">
-    <mxGraphModel dx="1203" dy="729" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="978" dy="593" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -166,11 +166,29 @@
         <mxCell id="b_Vdj-S6U7mOTNaXZyVh-76" value="获取滑动窗口中的最大值或最小值&lt;br&gt;1、L 表示滑动窗口的左边界，R 表示滑动窗口的右边界&lt;br&gt;2、一个双端队列，如果获取滑动窗口的最大值，则队列头 --&amp;gt; 队列尾是从大到小排列&lt;br&gt;3、双端队列存 数组 arr 的下标，而不是值&lt;br&gt;4、R ++&amp;nbsp;&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;判断队尾是否比当前进入滑动窗口的值大，如果不是，则弹出&lt;font color=&quot;#ff3333&quot;&gt;（严格按照从大到小）&lt;br&gt;&lt;/font&gt;5、L ++&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;判断队头是否为出去移出去的下标，如果是，则弹出" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=19;fontColor=#000000;" parent="1" vertex="1">
           <mxGeometry x="831" y="70" width="409" height="340" as="geometry" />
         </mxCell>
+        <mxCell id="vJLi4tAGOux7qaDnu9s5-1" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=18;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="131.25" y="386.00000000000045" as="sourcePoint" />
+            <mxPoint x="131.25" y="429.00000000000045" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vJLi4tAGOux7qaDnu9s5-2" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=18;width=5.064935064935065;endSize=2.6454545454545455;endWidth=7.686191359660747;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="128.25" y="488" as="sourcePoint" />
+            <mxPoint x="128.25" y="504" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vJLi4tAGOux7qaDnu9s5-3" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fontSize=18;width=5.064935064935065;endSize=2.6454545454545455;endWidth=7.686191359660747;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="131.25" y="558" as="sourcePoint" />
+            <mxPoint x="131.25" y="574" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="-rKcdlI4vbQ3thfyaZpn" name="单调栈">
-    <mxGraphModel dx="1564" dy="948" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1564" dy="948" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
