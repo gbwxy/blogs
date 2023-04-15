@@ -1,7 +1,6 @@
 * [返回](./)
 * [数据结构与算法](./docs/alg/)
-* [剑指offer](./docs/alg/0-SwordOffer)
-* [LeedCode](./docs/alg/1-Leedcode)
-* [数据结构](./docs/alg/2-data)
-* [其他算法](./docs/alg/3-others)
+* [排序算法](./docs/alg/A_Sort.md)
+* [Array](./docs/alg/B_Array.md)
+* [List](./docs/alg/C_List.md)
 
