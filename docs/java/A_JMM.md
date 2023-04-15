@@ -4,30 +4,30 @@
 
 - 并行与并发
     - 并行(parallel)：指在同一时刻，有多条指令在多个处理器上同时执行。所以无论从微观还是从宏观来看，二者都是一起执行的。
-      ![img.png](../../../../resources/image/concurrency/并行.png)
+      ![img.png](./../../resources/image/concurrency/并行.png)
     - 指在同一时刻只能有一条指令执行，但多个进程指令被快速的轮换执行，使得在宏观上具有多个进程同时执行的效果，但在微观上并不是同时执行的，只是把时间分成若干段，使多个进程快速交替的执行。
-      ![img.png](../../../../resources/image/concurrency/并发.png)
+      ![img.png](./../../resources/image/concurrency/并发.png)
 - 并发三大特性
     - 可见性：当一个线程修改了共享变量的值，其他线程能够看到修改的值
     - 有序性：即程序执行的顺序按照代码的先后顺序执行。
     - 原子性：一个或多个操作，要么全部执行且在执行过程中不被任何因素打断，要么全部不执行。不采取任何的原子性保障措施的自增操作并不是原子性的。
 - 同步与互斥
     - 所谓进程同步就是指协调这些完成某个共同任务的并发线程，在某些位置上指定线程的先后执行次序、传递信号或消息
-      ![img.png](../../../../resources/image/concurrency/线程同步.png)
+      ![img.png](./../../resources/image/concurrency/线程同步.png)
     - 「在一个时间段内只允许一个进程使用的资源」（这也就是互斥的意思），我们将其称为「临界资源」，对临界资源进行访问的那段代码称为「临界区」。
-      ![img.png](../../../../resources/image/concurrency/线程互斥.png)
+      ![img.png](./../../resources/image/concurrency/线程互斥.png)
 - 顺序一致性模型
     - 顺序一致性内存模型是一个被计算机科学家理想化了的理论参考模型，它为程序员提供了极强的内存可见性保证。顺序一致性内存模型有两大特性
         - 一个线程中的所有操作必须按照程序的顺序来执行
         - 所有线程都只能看到一个单一的操作执行顺序。
             - 比如进行了同步，线程1、2看到的执行顺序是 A -> B -> C -> D -> E -> F ，或者 D -> E -> F -> A -> B -> C 不会出现不一致。
             - 如果未进行了同步，那么ABC、DEF的执行顺序整体是有序的，也就是说会遵守 B 或 C 不会在 A 之前执行，但是可能会在 DEF 之前执行，具体看实际的线程获取的CPU时间片的分配。
-              ![img.png](../../../../resources/image/concurrency/顺序一致性模型.png)
+              ![img.png](./../../resources/image/concurrency/顺序一致性模型.png)
 - 指令重排序
     - Java语言规范规定JVM线程内部维持顺序化语义。即只要程序的最终结果与它顺序化情况的结果相等，那么指令的执行顺序可以与代码顺序不一致，此过程叫指令的重排序。
     - 指令重排序的意义：JVM能根据处理器特性（CPU多级缓存系统、多核处理器等）适当的对机器指令进行重排序，使机器指令能更符合CPU的执行特性，最大限度的发挥机器性能。
 - CPU 三级缓存
-  ![img.png](../../../../resources/image/concurrency/三级缓存.png)
+  ![img.png](./../../resources/image/concurrency/三级缓存.png)
 
 ### 参考
 
@@ -40,8 +40,8 @@
 
 JMM规范了Java虚拟机与计算机内存是如何协同工作的：规定了一个线程如何和何时可以看到由其他线程修改过后的共享变量的值，以及在必须时如何同步的访问共享变量。
 JMM描述的是一种抽象的概念，一组规则，通过这组规则控制程序中各个变量在共享数据区域和私有数据区域的访问方式，JMM是围绕原子性、有序性、可见性展开的。
-![img.png](../../../../resources/image/concurrency/jmm.png)
-![img.png](../../../../resources/image/concurrency/jmm-8个方法.png)
+![img.png](./../../resources/image/concurrency/jmm.png)
+![img.png](./../../resources/image/concurrency/jmm-8个方法.png)
 
 - 如果对一个变量执行lock操作，将会清空工作内存中此变量的值，在执行引擎使用这个变量前需要重新执行load或assign操作初始化变量的值
 - 对一个变量执行unlock操作之前，必须先把此变量同步到主内存中（执行store和write操作）。
@@ -55,7 +55,7 @@ JMM描述的是一种抽象的概念，一组规则，通过这组规则控制�
 
 ### Volatile 保证指令重排序规则
 
-![img.png](../../../../resources/image/concurrency/指令重排序.png)
+![img.png](./../../resources/image/concurrency/指令重排序.png)
 
 1. 第二个操作是volatile写，不管第一个操作是什么都不会重排序
 2. 第一个操作是volatile读，不管第二个操作是什么都不会重排序
@@ -86,7 +86,7 @@ JMM描述的是一种抽象的概念，一组规则，通过这组规则控制�
 
 JMM内存屏障插入策略
 
-![img.png](../../../../resources/image/concurrency/内存屏障.png)
+![img.png](./../../resources/image/concurrency/内存屏障.png)
 
 1. 在每个volatile写操作的前面插入一个StoreStore屏障
 2. 在每个volatile写操作的后面插入一个StoreLoad屏障
@@ -127,7 +127,7 @@ happens-before原则非常重要，它是判断数据是否存在竞争、线程
 
 ### 总线仲裁机制
 
-![img.png](../../../../resources/image/concurrency/总线仲裁机制.png)
+![img.png](./../../resources/image/concurrency/总线仲裁机制.png)
 
 - 每次处理器和内存之间的数据传递都是通过一系列步骤来完成的，这一系列步骤称之为总线事务（Bus Transaction）。总线事务包括读事务（Read Transaction）和写事务（WriteTransaction）。
 - 总线会同步试图并发使用总线的事务。在一个处理器执行总线事务期间，总线会禁止其他的处理器和I/O设备执行内存的读/写。

@@ -16,7 +16,7 @@ Abstract Queued Synchronizer (AQS) 是一个抽象同步框架，可以用来实
     - getState() 获取资源状态
     - setState() / compareAndSetState() 设置状态
 - AQS 定义两种队列
-  ![img.png](../../../../resources/image/concurrency/AQS同步队列&条件队列.png)
+  ![img.png](./../../resources/image/concurrency/AQS同步队列&条件队列.png)
     - 同步等待队列： 主要用于维护获取锁失败时入队的线程。它一种基于双向链表数据结构的队列，是FIFO先进先出线程等待队列
         - 当前线程获取同步状态失败时，AQS则会将当前线程信息构造成一个节点（Node）并将其加入到同步队列，同时会阻塞当前线程
         - 当同步状态释放时，会把首节点唤醒，使其再次尝试获取同步状态。

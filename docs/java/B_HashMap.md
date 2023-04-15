@@ -30,7 +30,7 @@ public class HashMap {
 
 ## 扩容流程
 
-![img.png](../../resources/image/concurrency/HashMap-resize.png)
+![img.png](./../../resources/image/concurrency/HashMap-resize.png)
 为什么每次都扩容两倍? 是为了提高 resize() 效率。
 
 - 当 put 一个元素 e 到 Map 中，查找 e 放置的 table[]  的位置 i = e.hash & (cap -1)
@@ -41,4 +41,4 @@ public class HashMap {
 
 ## put 流程
 
-![img.png](../../resources/image/concurrency/HashMap-put.png)
+![img.png](./../../resources/image/concurrency/HashMap-put.png)

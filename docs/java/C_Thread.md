@@ -14,7 +14,7 @@
     - 在用户模式下，具有 ring3 保护级别，代码没有对硬件的直接控制权限，也不能直接访问地址的内存，程序是通过调用系统接口(System Call APIs)
       来达到访问硬件和内存，在这种保护模式下，即时程序发生崩溃也是可以恢复的，在电脑上大部分程序都是在，用户模式下运行的
 
-![img.png](../../../../resources/image/concurrency/内核态&用户态.png)
+![img.png](./../../resources/image/concurrency/内核态&用户态.png)
 
 - 从上图我们可以看出来通过系统调用将Linux整个体系分为用户态和内核态，为了使应用程序访问到内核的资源，如CPU、内存、I/O，内核必须提供一组通用的访问接口，这些接口就叫**系统调用**。
 - 库函数就是屏蔽这些复杂的底层实现细节，减轻程序员的负担，从而更加关注上层的逻辑实现，它**对系统调用进行封装，提供简单的基本接口给程序员**。
@@ -48,13 +48,13 @@
 
 ## Thread.start()
 
-![img.png](../../../../resources/image/concurrency/线程创建与启动流程.png)
+![img.png](./../../resources/image/concurrency/线程创建与启动流程.png)
 
 - [Thread执行流程图](https://www.processon.com/view/link/5f02ed9e6376891e81fec8d5)
 
 ## Java线程的生命周期
 
-![img.png](../../../../resources/image/concurrency/JavaThreadLiftCycle.png)
+![img.png](./../../resources/image/concurrency/JavaThreadLiftCycle.png)
 
 - Thread.sleep(millis)
     - 调用 sleep 会让当前线程从 Running 进入 TIMED_WAITING 状态，**不会释放对象锁**

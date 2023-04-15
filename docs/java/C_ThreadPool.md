@@ -78,14 +78,14 @@ public class ThreadPoolExecutor {
 
 ```
 
-![img.png](../../../../resources/image/concurrency/ThreadPoolStatus.png)
+![img.png](./../../resources/image/concurrency/ThreadPoolStatus.png)
 
 ## 任务提交与任务执行顺序
 
 - 任务提交顺序：核心线程 -> 缓存队列 -> 非核心线程
 - 任务执行顺序：核心线程 -> 非核心线程 -> 缓存队列
 
-![img.png](../../../../resources/image/concurrency/线程池任务提交顺序.png)
+![img.png](./../../resources/image/concurrency/线程池任务提交顺序.png)
 
 ## 线程池如何执行任务的
 

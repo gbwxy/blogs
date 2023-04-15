@@ -5,7 +5,7 @@
 synchronized 同步块是 Java 提供的一种原子性内置锁，Java 中的每个对象都可以把它当作一个同步锁来使用。
 
 **加锁方式**
-![img.png](../../../../resources/image/concurrency/Synchronized加锁方式.png)
+![img.png](./../../resources/image/concurrency/Synchronized加锁方式.png)
 
 ## Synchronized 原理
 
@@ -49,18 +49,18 @@ ObjectMonitor(){
 
 - 在获取锁时，是将当前线程插入到cxq的头部，而释放锁时，默认策略是：如果EntryList为空，则将cxq中的元素按原有顺序插入到EntryList，并唤醒第一个线程，也就是当EntryList 为空时，是后来的线程先获取锁。_
   EntryList不为空，直接从_EntryList中唤醒线程。
-  ![img.png](../../../../resources/image/concurrency/synchronized等待队列.png)
+  ![img.png](./../../resources/image/concurrency/synchronized等待队列.png)
 
 ## 对象的内存布局
 
 - 对象头：比如 hash码，对象所属的年代，对象锁，锁状态标志，偏向锁（线程）ID，偏向时间，数组长度（数组对象才有）等。
 - 实例数据：存放类的属性数据信息，包括父类的属性信息；
 - 对齐填充：由于虚拟机要求 对象起始地址必须是8字节的整数倍。填充数据不是必须存在的，仅仅是为了字节对齐。
-  ![img.png](../../../../resources/image/concurrency/对象内存布局.png)
+  ![img.png](./../../resources/image/concurrency/对象内存布局.png)
 
 ### 对象头
 
-![img.png](../../../../resources/image/concurrency/对象头.png)
+![img.png](./../../resources/image/concurrency/对象头.png)
 
 - Mark Word
     - 用于存储对象自身的运行时数据，如哈希码（HashCode）、GC分代年龄、锁状态标志、线程持有的锁、偏向线程ID、偏向时间戳等，
@@ -73,7 +73,7 @@ ObjectMonitor(){
 
 ### Mark Word
 
-![img.png](../../../../resources/image/concurrency/对象结构.png)
+![img.png](./../../resources/image/concurrency/对象结构.png)
 
 - hash：保存对象的哈希码。运行期间调用System.identityHashCode()来计算，延迟计算，并把结果赋值到这里。
 - age：保存对象的分代年龄。表示对象被GC的次数，当该次数到达阈值(默认15)的时候，对象就会转移到老年代。
@@ -130,7 +130,7 @@ ObjectMonitor(){
 
 ### 锁对象状态转换 - 总结
 
-![img.png](../../../../resources/image/concurrency/Synchronized锁状态转换.png)
+![img.png](./../../resources/image/concurrency/Synchronized锁状态转换.png)
 
 ### 自适应自旋 - 重量级锁
 
