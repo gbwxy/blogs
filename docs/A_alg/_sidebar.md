@@ -1,5 +1,4 @@
 * [返回主页](./)
-* [返回算法](./A_alg/)
 * [排序算法](./docs/A_alg/A_Sort.md)
 * [Array](./docs/A_alg/B_Array.md)
 * [List](./docs/A_alg/C_List.md)
