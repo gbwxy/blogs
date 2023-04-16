@@ -2,7 +2,7 @@
 
 ## 搜索二叉树
 
-![](../../../../../../resources/image/algoruthm/二叉搜索树.png)
+![](./../../resources/image/algoruthm/二叉搜索树.png)
 二分搜索树（英语：Binary Search Tree），也称为 二叉查找树 、二叉搜索树 、有序二叉树或排序二叉树。满足以下几个条件：
 
 - 若它的左子树不为空，左子树上所有节点的值都小于它的根节点。
@@ -10,7 +10,7 @@
 
 ## 平衡二叉树（ avl 树）
 
-![](../../../../../../resources/image/algoruthm/平衡二叉树.png)
+![](./../../resources/image/algoruthm/平衡二叉树.png)
 平衡二叉查找树：简称平衡二叉树。由前苏联的数学家 Adelse-Velskil 和 Landis 在 1962 年提出的高度平衡的二叉树，根据科学家的英文名也称为 AVL 树。它具有如下几个性质：
 
 - 可以是空树。
@@ -18,12 +18,12 @@
 
 ## 满二叉树
 
-![](../../../../../../resources/image/algoruthm/满二叉树.jpg)
+![](./../../resources/image/algoruthm/满二叉树.jpg)
 对于满二叉树，除最后一层无任何子节点外，每一层上的所有结点都有两个子结点二叉树。
 
 ## 完全二叉树
 
-![](../../../../../../resources/image/algoruthm/完全二叉树.jpeg)
+![](./../../resources/image/algoruthm/完全二叉树.jpeg)
 若设二叉树的深度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第 h 层所有的结点都连续集中在最左边，这就是完全二叉树。
 
 ## Heap 堆
@@ -95,19 +95,19 @@ https://leetcode.com/problems/encode-n-ary-tree-to-binary-tree
 - 对于线段树中的每一个非叶子节点[a,b]，它的左儿子表示的区间为[a,(a+b)/2]，右儿子表示的区间为[(a+b)/2+1,b]。因此线段树是平衡二叉树，最后的子节点数目为N，即整个线段区间的长度。
 - Lazy思想：对整个结点进行的操作，先在结点上做标记，而并非真正执行，直到根据查询操作的需要分成两部分。来解决每次修改都会全量更新的性能下降。
 
-![img.png](../../../../../../resources/image/algoruthm/线段树.png)
+![img.png](./../../resources/image/algoruthm/线段树.png)
 
 - [线段树](https://oi-wiki.org/ds/seg/)
 - [Segment Tree](https://cp-algorithms.com/data_structures/segment_tree.html)
 
 # 二叉索引树
 
-![img.png](../../../../../../resources/image/algoruthm/二叉索引树.png)
+![img.png](./../../resources/image/algoruthm/二叉索引树.png)
 
 - 二叉索引树(Binary Indexed Tree, BIT)，俗称树状数组，又以发明者命名为Fenwick树。现多用于高效计算数列的前缀和，区间和。
 - 支持区间查询，只支持单点更新。非常容易改成一维、二维、三维的结构
 - 辅助函数的计算公式
-  ![img.png](../../../../../../resources/image/algoruthm/二叉索引树-2.png)
+  ![img.png](./../../resources/image/algoruthm/二叉索引树-2.png)
 
 - [树状数组(二叉索引树)](https://yanglei253.github.io/2020/07/17/dataStructure/dataStructure-binaryindexedtree/)
 - [Fenwick Tree | 二叉索引树 ](https://zhuanlan.zhihu.com/p/94432288)

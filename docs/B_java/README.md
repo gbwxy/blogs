@@ -1,4 +1,5 @@
-# synchronized 和 ReentrantLock 的区别
+# Java 
+## synchronized 和 ReentrantLock 的区别
 
 ## 相同点
 

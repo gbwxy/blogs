@@ -2,7 +2,7 @@
 * [Java 基础与进阶](./docs/B_java/)
 * [MySQL](./docs/C_mysql/)
 * [Spring](./docs/D_spring/)
-* [Q_springcloud 项目实战](./docs/Q_Q_springcloud/)
+* [Springcloud](./docs/Q_springcloud/)
 * [网络](./docs/E_network/)
 * [Redis](./docs/H_redis/)
 * [kafka](./docs/I_kafka/)

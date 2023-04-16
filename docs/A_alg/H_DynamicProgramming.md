@@ -7,7 +7,7 @@
 
 ## Hanoi Tower
 
-![](../../../../../../resources/image/algoruthm/hanoi_tower.gif)
+![](./../../resources/image/algoruthm/hanoi_tower.gif)
 如下图所示，从左到右有A、B、C三根柱子，其中A柱子上面有从小叠到大的n个圆盘，现要求将A柱子上的圆盘移到C柱子上去， 期间只有一个原则：一次只能移到一个盘子且大盘子不能在小盘子上面，求移动的步骤和移动的次数
 
 实现这个算法可以简单分为三个步骤：

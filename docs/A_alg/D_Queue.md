@@ -1,19 +1,19 @@
 # 队列和栈
 
-![](../../../../../../resources/image/algoruthm/Stack&Queue.png)
+![](./../../resources/image/algoruthm/Stack&Queue.png)
 
 ## 两个栈实现一个队列
 
 - 方法：
-  ![](../../../../../../resources/image/algoruthm/TwoStackAsQueue.png)
+  ![](./../../resources/image/algoruthm/TwoStackAsQueue.png)
 - 优化：
     - 入队时，将元素压入s1。
     - 出队时，判断s2是否为空，如不为空，则直接弹出顶元素；如为空，则将s1的元素逐个“倒入”s2，把最后一个元素弹出并出队。
 
 ## 两个队列实现栈
 
-![](../../../../../../resources/image/algoruthm/TwoQueueAsStack1.jpeg)
-![](../../../../../../resources/image/algoruthm/TwoQueueAsStack2.jpeg)
+![](./../../resources/image/algoruthm/TwoQueueAsStack1.jpeg)
+![](./../../resources/image/algoruthm/TwoQueueAsStack2.jpeg)
 
 - 任何时候两个队列总有一个是空的。
 - 添加元素总是向非空队列中 add 元素。
