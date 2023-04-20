@@ -9,7 +9,7 @@
 * [Elasticsearch](./docs/J_elasticsearch/)
 * [Zookeeper](./docs/K_zookeeper/)
 * [Linux](./docs/O_linux/)
-* [k8s](./docs/P_k8s/)
+* [k8s](./docs/P_CloudNative/k8s/)
 * [Prometheus](./docs/R_prometheus/)
 * [研发工具](./docs/Y_tools/)
 * [联系小猿](./connectme.md)
