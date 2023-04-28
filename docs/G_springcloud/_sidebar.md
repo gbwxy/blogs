@@ -1,6 +1,6 @@
 * [返回](./)
-* [微服务 & Spring Cloud ](./docs/G_springcloud/)
-* [从这里开始 Spring Cloud 之旅](./docs/G_springcloud/0-perstart.md)
+* [Spring Cloud ](./docs/G_springcloud/)
+* [Spring Cloud 从这里开始](./docs/G_springcloud/0-perstart.md)
 * [Spring Cloud - 版本介绍](./docs/G_springcloud/1-版本介绍.md)
 * [Spring Cloud - 项目实战](./docs/G_springcloud/2-项目实践.md)
 * [Spring Cloud - Eureka](./docs/G_springcloud/3-Eureka.md)

@@ -1,5 +1,5 @@
 * [返回](./)
-* [Java 基础与进阶](./docs/B_java/)
+* [Java](./docs/B_java/)
 * [HashMap](./docs/B_java/B_HashMap.md)
 * [线程](./docs/B_java/C_Thread.md)
 * [线程池](./docs/B_java/C_ThreadPool.md)

@@ -1,4 +1,5 @@
 * [返回主页](./)
+* [算法](./docs/A_alg/)
 * [排序算法](./docs/A_alg/A_Sort.md)
 * [二进制运算](./docs/A_alg/0_BitOperation.md)
 * [Array](./docs/A_alg/B_Array.md)

@@ -1,4 +1,4 @@
-# Java 
+# Java 总结
 ## synchronized 和 ReentrantLock 的区别
 
 ## 相同点
