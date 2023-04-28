@@ -91,7 +91,7 @@ public abstract class ClassLoader {
 - 沙箱安全机制：禁止核心库使用自定义加载器加载，例如自己写的java.lang.String.class类不会被加载，这样便可以防止核心 API 库被随意篡改。
 - 避免类的重复加载：当父亲已经加载了该类时，就没有必要子ClassLoader再加载一 次，保证被加载类的唯一性
 
-![img.png](../../../../resources/image/jvm/双亲委派.png)
+![img.png](./../../resources/image/jvm/双亲委派.png)
 
 ### 加载步骤
 

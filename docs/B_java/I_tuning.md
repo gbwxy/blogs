@@ -12,7 +12,7 @@ JVM 调优的目的主要是降低 FullGC 对系统的影响，减少 FullGC 次
     - 每次Young GC后有多少对象存活和进入老年代：jstat -gc pid 300000 10 观察每次结果eden， survivor和老年代使用的变化情况，以推算出老年代对象增长速率
     - Full GC的触发频率和每次耗时 ‐XX:CMSInitiatingOccupancyFraction=75 ‐XX:+UseCMSInitiatingOccupancyOnly
 
-![img.png](../../../../resources/image/jvm/GCTuning-01.png)
+![img.png](./../../resources/image/jvm/GCTuning-01.png)
 
 - 结合对象挪动到老年代那些规则，判断为什么会发生 FullGC，并推断出程序可能会出现的问题
 
@@ -40,5 +40,4 @@ JVM 调优的目的主要是降低 FullGC 对系统的影响，减少 FullGC 次
 - jmap 查内存中的对象
 - jstack 查线程的情况
 - jstat 查看堆内存各部分的使用量
-
 

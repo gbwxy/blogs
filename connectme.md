@@ -1,7 +1,7 @@
 # 联系小猿
 
 公众号：gbwxy-happy </br>
-邮箱：zgwj906@gmail.com  wby90@163.com  </br>
+邮箱：zgwj906@gmail.com  gbwxy90@163.com  </br>
 微信：wby1990a  </br>
 
 

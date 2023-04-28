@@ -37,25 +37,25 @@ Heap 是一种数据结构具有以下的特点：
 - heapInsert(arr,idx) idx 上面的树是符合规则的，往上移动
 - heapify(arr,idx,heapSize) idx 下面的树是符合规则的，往下沉
 
-![](../../../image/Max&Min-heap.png)
-![](../../../image/heap-structure.png)
+![](./../../resources/image/algoruthm/Max&Min-heap.png)
+![](./../../resources/image/algoruthm/heap-structure.png)
 
 ## Trie 前缀树
 
-![](../../../image/Trie.png)
+![](./../../resources/image/algoruthm/Trie.png)
 在计算机科学中，trie，又称前缀树或字典树，是一种有序树，用于保存关联数组，其中的键通常是字符串。与二叉查找树不同，键不是直接保存在节点中，而是由节点在树中的位置决定。一个节点的所有子孙都有相同的前缀，也就是这个节点对应的字符串，而根节点对应空字符串。一般情况下，不是所有的节点都有对应的值，只有叶子节点和部分内部节点所对应的键才有相关的值。
 
 ## 并查集
 
 #### 基于size的合并
 
-![](../../../image/并查集.png)
+![](./../../resources/image/algoruthm/并查集.png)
 我们可以引入另外一个叫做Size的数组，专门用来记录每一个集合都有多少个元素，然后在进行联合操作的时候，我们借用Size数组来查询需要合并的两个集合当中哪一个集合中的元素个数比较少，
 我们就可以把Size数小的集合并入Size数大的集合当中去。这样，就能大大的减少因为合并造成树的层数过高的现象，提高find效率。
 
 #### 基于递归的路径压缩
 
-![](../../../image/并查集-路径压缩.jpg)
+![](./../../resources/image/algoruthm/并查集-路径压缩.jpg)
 压缩后所有的节点都指向根节点，这种情况下，我们搜索任何节点的根节点都最多只需要一步就能够完成
 
 # 二叉树的解题技巧
